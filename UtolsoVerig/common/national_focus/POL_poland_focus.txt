@@ -1,0 +1,1344 @@
+focus_tree = {
+	id = poland_focus
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = POL
+		}
+	}
+	#Focus for War with our old ally
+	focus = {
+		id = POL_warwithouroldally
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 9
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = POL_reclaimbalticterritories 
+		}
+		prerequisite = { 
+			focus = POL_claimourslovakianland 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for First Polish election
+	focus = {
+		id = POL_firstpolishelection
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 13
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = POL_freedominpoland }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Polish Bombers
+	focus = {
+		id = POL_polishbombers
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 31
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = POL_airplanesfromtheitalians 
+			focus = POL_airplanesfromthebritish 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Polish Paratrooper divisions
+	focus = {
+		id = POL_polishparatrooperdivisions
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 31
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = POL_polishbombers }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Airplanes from the Italians
+	focus = {
+		id = POL_airplanesfromtheitalians
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 30
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = POL_expandthepolishairforce }
+		mutually_exclusive = { focus = POL_airplanesfromthebritish }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Expand the Polish Airforce
+	focus = {
+		id = POL_expandthepolishairforce
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 31
+		y = 0
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Airplanes from the British
+	focus = {
+		id = POL_airplanesfromthebritish
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 32
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = POL_expandthepolishairforce }
+		mutually_exclusive = { focus = POL_airplanesfromtheitalians }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Re-Sign the pact
+	focus = {
+		id = POL_resignthepact
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 5
+		y = 0
+		cost = 10
+		available_if_capitulated = yes
+		mutually_exclusive = { focus = POL_anewfutureforpoland }
+		search_filters = { FOCUS_FILTER_POLITICAL } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_opinion_modifier= { 
+target = HUN 
+modifier = medium_increase 
+}
+		}
+	}
+
+	#Focus for A new future for Poland
+	focus = {
+		id = POL_anewfutureforpoland
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 10
+		y = 0
+		cost = 10
+		available_if_capitulated = yes
+		mutually_exclusive = { focus = POL_resignthepact }
+		search_filters = { FOCUS_FILTER_POLITICAL } 
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Rekindle Hungarian friendship
+	focus = {
+		id = POL_rekindlehungarianfriendship
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 5
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = POL_resignthepact }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Write our own future
+	focus = {
+		id = POL_writeourownfuture
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 10
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = POL_abandonthehungarians }
+		mutually_exclusive = { focus = POL_searchforanewally }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Search for a new ally
+	focus = {
+		id = POL_searchforanewally
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 16
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = POL_abandonthehungarians }
+		mutually_exclusive = { focus = POL_writeourownfuture }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Abandon the Hungarians
+	focus = {
+		id = POL_abandonthehungarians
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 10
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = POL_anewfutureforpoland }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Pursue closer bonds with Hungary
+	focus = {
+		id = POL_pursuecloserbondswithhungary
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 5
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = POL_rekindlehungarianfriendship }
+		mutually_exclusive = { focus = POL_distancefromhungary }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Distance from Hungary
+	focus = {
+		id = POL_distancefromhungary
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 1
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = POL_rekindlehungarianfriendship }
+		mutually_exclusive = { focus = POL_pursuecloserbondswithhungary }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Sign the pact for 5 more years
+	focus = {
+		id = POL_signthepactfor5moreyears
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 0
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = POL_distancefromhungary }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Military access within our countries
+	focus = {
+		id = POL_militaryaccesswithinourcountries
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 4
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = POL_pursuecloserbondswithhungary }
+		search_filters = { FOCUS_FILTER_POLITICAL } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			HUN = { country_event= {
+days = 1 
+id = mod.1 
+} }
+		}
+	}
+
+	#Focus for Joint construction projects
+	focus = {
+		id = POL_jointconstructionprojects
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 6
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = POL_pursuecloserbondswithhungary }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Legacy of Polish Lithuania
+	focus = {
+		id = POL_legacyofpolishlithuania
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 9
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = POL_writeourownfuture }
+		mutually_exclusive = { focus = POL_allowthepublictovote }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Allow the public to vote
+	focus = {
+		id = POL_allowthepublictovote
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 11
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = POL_writeourownfuture }
+		mutually_exclusive = { focus = POL_legacyofpolishlithuania }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Work with the British
+	focus = {
+		id = POL_workwiththebritish
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 15
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = POL_searchforanewally }
+		mutually_exclusive = { focus = POL_workwiththesoviets }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Work with the Soviets
+	focus = {
+		id = POL_workwiththesoviets
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 17
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = POL_searchforanewally }
+		mutually_exclusive = { focus = POL_workwiththebritish }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Side with the Germans
+	focus = {
+		id = POL_sidewiththegermans
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 2
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = POL_distancefromhungary }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Expand communist support
+	focus = {
+		id = POL_expandcommunistsupport
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 17
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = POL_workwiththesoviets }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Unite with the Hungarians
+	focus = {
+		id = POL_unitewiththehungarians
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 5
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = POL_militaryaccesswithinourcountries 
+		}
+		prerequisite = { 
+			focus = POL_jointconstructionprojects 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			HUN = { country_event= {
+days = 1 
+id = mod.4 
+} }
+		}
+	}
+
+	#Focus for Freedom in Poland
+	focus = {
+		id = POL_freedominpoland
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 13
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = POL_workwiththebritish 
+			focus = POL_allowthepublictovote 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Reclaim baltic territories
+	focus = {
+		id = POL_reclaimbalticterritories
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 10
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = POL_legacyofpolishlithuania }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Claim our Slovakian land
+	focus = {
+		id = POL_claimourslovakianland
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 8
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = POL_legacyofpolishlithuania }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Start the 5 year plan
+	focus = {
+		id = POL_startthe5yearplan
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 1
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = POL_signthepactfor5moreyears 
+		}
+		prerequisite = { 
+			focus = POL_sidewiththegermans 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Economic prosperity without the Hungarians
+	focus = {
+		id = POL_economicprosperitywithoutthehungarians
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 0
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = POL_startthe5yearplan }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Industrial Reform
+	focus = {
+		id = POL_industrialreform
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 2
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = POL_startthe5yearplan }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Military based production
+	focus = {
+		id = POL_militarybasedproduction
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 1
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = POL_economicprosperitywithoutthehungarians 
+		}
+		prerequisite = { 
+			focus = POL_industrialreform 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Make the push west
+	focus = {
+		id = POL_makethepushwest
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 8
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = POL_warwithouroldally }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Move eastward
+	focus = {
+		id = POL_moveeastward
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 10
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = POL_warwithouroldally }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for War with the Germans
+	focus = {
+		id = POL_warwiththegermans
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 8
+		y = 7
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = POL_makethepushwest }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for War with the Soviets
+	focus = {
+		id = POL_warwiththesoviets
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 10
+		y = 7
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = POL_moveeastward }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Proclaim the second Polish-Lithuanian Commonwealth
+	focus = {
+		id = POL_proclaimthesecondpolishlithuaniancommonwealth
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 9
+		y = 8
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = POL_warwiththegermans 
+		}
+		prerequisite = { 
+			focus = POL_warwiththesoviets 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Trade focus
+	focus = {
+		id = POL_tradefocus
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 0
+		y = 7
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = POL_militarybasedproduction }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Lower the working age
+	focus = {
+		id = POL_lowertheworkingage
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 2
+		y = 7
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = POL_militarybasedproduction }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Put our work into military factories
+	focus = {
+		id = POL_putourworkintomilitaryfactories
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 1
+		y = 8
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = POL_tradefocus 
+		}
+		prerequisite = { 
+			focus = POL_lowertheworkingage 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Turn on the Hungarians
+	focus = {
+		id = POL_turnonthehungarians
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 1
+		y = 9
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = POL_putourworkintomilitaryfactories }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Increase our fascist support
+	focus = {
+		id = POL_increaseourfascistsupport
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 0
+		y = 10
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = POL_turnonthehungarians }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Draw closer to Germany
+	focus = {
+		id = POL_drawclosertogermany
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 2
+		y = 10
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = POL_turnonthehungarians }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Alliance with the Germans
+	focus = {
+		id = POL_alliancewiththegermans
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 1
+		y = 11
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = POL_increaseourfascistsupport 
+		}
+		prerequisite = { 
+			focus = POL_drawclosertogermany 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Get revenge on the Soviets
+	focus = {
+		id = POL_getrevengeonthesoviets
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 1
+		y = 12
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = POL_alliancewiththegermans }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Move further west
+	focus = {
+		id = POL_movefurtherwest
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 8
+		y = 9
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = POL_proclaimthesecondpolishlithuaniancommonwealth }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Balkan takeover
+	focus = {
+		id = POL_balkantakeover
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 10
+		y = 9
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = POL_proclaimthesecondpolishlithuaniancommonwealth }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Finish off a weak Soviets
+	focus = {
+		id = POL_finishoffaweaksoviets
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 9
+		y = 11
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = POL_balkantakeover 
+			focus = POL_movefurtherwest 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for War with France
+	focus = {
+		id = POL_warwithfrance
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 7
+		y = 10
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = POL_movefurtherwest }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for War with Yugoslavia
+	focus = {
+		id = POL_warwithyugoslavia
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 11
+		y = 10
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = POL_balkantakeover }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Further claims in the Balkans
+	focus = {
+		id = POL_furtherclaimsinthebalkans
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 11
+		y = 11
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = POL_warwithyugoslavia }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for War with Italy
+	focus = {
+		id = POL_warwithitaly
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 7
+		y = 11
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = POL_warwithfrance }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Polish-Lithuanian Empire
+	focus = {
+		id = POL_polishlithuanianempire
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 9
+		y = 12
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = POL_warwithitaly 
+		}
+		prerequisite = { 
+			focus = POL_furtherclaimsinthebalkans 
+		}
+		prerequisite = { 
+			focus = POL_finishoffaweaksoviets 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Become the sole european power
+	focus = {
+		id = POL_becomethesoleeuropeanpower
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 9
+		y = 13
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = POL_polishlithuanianempire }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Join the Allies
+	focus = {
+		id = POL_jointheallies
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 13
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = POL_firstpolishelection }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Allied research
+	focus = {
+		id = POL_alliedresearch
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 12
+		y = 7
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = POL_jointheallies }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Rebuild our economy
+	focus = {
+		id = POL_rebuildoureconomy
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 14
+		y = 7
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = POL_jointheallies }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Anti-Fascist government
+	focus = {
+		id = POL_antifascistgovernment
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 13
+		y = 8
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = POL_alliedresearch 
+		}
+		prerequisite = { 
+			focus = POL_rebuildoureconomy 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Topple the German dictatorship
+	focus = {
+		id = POL_topplethegermandictatorship
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 13
+		y = 9
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = POL_antifascistgovernment }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Liberate Slovakia
+	focus = {
+		id = POL_liberateslovakia
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 16
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = POL_expandcommunistsupport }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Join the Comintern
+	focus = {
+		id = POL_jointhecomintern
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 18
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = POL_expandcommunistsupport }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Stalin's visit to Poland
+	focus = {
+		id = POL_stalinsvisittopoland
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 17
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = POL_liberateslovakia 
+		}
+		prerequisite = { 
+			focus = POL_jointhecomintern 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Focus on our civilians
+	focus = {
+		id = POL_focusonourcivilians
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 15
+		y = 9
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = POL_startanindustrialplan }
+		mutually_exclusive = { focus = POL_militaryfocus }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Ban the Democratic parties
+	focus = {
+		id = POL_banthedemocraticparties
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 16
+		y = 7
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = POL_stalinsvisittopoland }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Start an Industrial Plan
+	focus = {
+		id = POL_startanindustrialplan
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 17
+		y = 8
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = POL_freethehungarians 
+		}
+		prerequisite = { 
+			focus = POL_banthedemocraticparties 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Military Focus
+	focus = {
+		id = POL_militaryfocus
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 19
+		y = 9
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = POL_startanindustrialplan }
+		mutually_exclusive = { focus = POL_focusonourcivilians }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Free the Hungarians
+	focus = {
+		id = POL_freethehungarians
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 18
+		y = 7
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = POL_stalinsvisittopoland }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Build a university
+	focus = {
+		id = POL_buildauniversity
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 17
+		y = 11
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = POL_militaryfocus 
+			focus = POL_focusonourcivilians 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Free the Polish everywhere
+	focus = {
+		id = POL_freethepolisheverywhere
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 18
+		y = 12
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = POL_industrialrevolution 
+			focus = POL_putthementowork 
+		}
+		mutually_exclusive = { 
+			focus = POL_takeoverthesovietregime 
+			focus = POL_ 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Put the men to work
+	focus = {
+		id = POL_putthementowork
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 19
+		y = 10
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = POL_militaryfocus }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Industrial Revolution
+	focus = {
+		id = POL_industrialrevolution
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 15
+		y = 10
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = POL_focusonourcivilians }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Take over the Soviet regime
+	focus = {
+		id = POL_takeoverthesovietregime
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 16
+		y = 12
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = POL_industrialrevolution 
+			focus = POL_putthementowork 
+		}
+		mutually_exclusive = { focus = POL_freethepolisheverywhere }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Become the beacon of Communism
+	focus = {
+		id = POL_becomethebeaconofcommunism
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 15
+		y = 13
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = POL_takeoverthesovietregime }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Become a member of the Soviet Union
+	focus = {
+		id = POL_becomeamemberofthesovietunion
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 19
+		y = 13
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = POL_freethepolisheverywhere }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Build up the Polish army
+	focus = {
+		id = POL_buildupthepolisharmy
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 23
+		y = 0
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Tank designs from the Soviets
+	focus = {
+		id = POL_tankdesignsfromthesoviets
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 22
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = POL_buildupthepolisharmy }
+		mutually_exclusive = { focus = POL_tankdesignsfromthegermans }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Tank designs from the Germans
+	focus = {
+		id = POL_tankdesignsfromthegermans
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 24
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = POL_buildupthepolisharmy }
+		mutually_exclusive = { focus = POL_tankdesignsfromthesoviets }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Creation of the Polish Navy
+	focus = {
+		id = POL_creationofthepolishnavy
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 27
+		y = 0
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Naval designs from the Americans
+	focus = {
+		id = POL_navaldesignsfromtheamericans
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 28
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = POL_creationofthepolishnavy }
+		mutually_exclusive = { focus = POL_navaldesignsfromthejapanese }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Naval designs from the Japanese
+	focus = {
+		id = POL_navaldesignsfromthejapanese
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 26
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = POL_creationofthepolishnavy }
+		mutually_exclusive = { focus = POL_navaldesignsfromtheamericans }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Motorize our army
+	focus = {
+		id = POL_motorizeourarmy
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 23
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = POL_tankdesignsfromthesoviets 
+			focus = POL_tankdesignsfromthegermans 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Design our own navy
+	focus = {
+		id = POL_designourownnavy
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 27
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = POL_navaldesignsfromtheamericans 
+			focus = POL_navaldesignsfromthejapanese 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Train the Polish marines
+	focus = {
+		id = POL_trainthepolishmarines
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 27
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = POL_designourownnavy }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Polish Mountaineers
+	focus = {
+		id = POL_polishmountaineers
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 23
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = POL_motorizeourarmy }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Establish the Polish Special Forces
+	focus = {
+		id = POL_establishthepolishspecialforces
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 27
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = POL_polishmountaineers 
+		}
+		prerequisite = { 
+			focus = POL_trainthepolishmarines 
+		}
+		prerequisite = { 
+			focus = POL_polishparatrooperdivisions 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Create a Modern Army
+	focus = {
+		id = POL_createamodernarmy
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 27
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = POL_establishthepolishspecialforces }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+#End of focuses 
+ }

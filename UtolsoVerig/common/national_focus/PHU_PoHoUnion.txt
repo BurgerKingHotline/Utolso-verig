@@ -1,0 +1,267 @@
+focus_tree = {
+	id = PoHoUnion
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = PHU
+		}
+	}
+	#Focus for Elect A King!
+	focus = {
+		id = PHU_electaking
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 9
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		mutually_exclusive = { focus = PHU_dualmonarchy }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Dual Monarchy
+	focus = {
+		id = PHU_dualmonarchy
+		icon = GFX_goal_unknown
+		x = 16
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		mutually_exclusive = { focus = PHU_electaking }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for King #1
+	focus = {
+		id = PHU_king1
+		icon = GFX_goal_unknown
+		x = 7
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = PHU_electaking }
+		mutually_exclusive = { focus = PHU_king2 }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for King #2
+	focus = {
+		id = PHU_king2
+		icon = GFX_goal_unknown
+		x = 11
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = PHU_electaking }
+		mutually_exclusive = { focus = PHU_king1 }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Power Union
+	focus = {
+		id = PHU_powerunion
+		icon = GFX_goal_unknown
+		x = 7
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = PHU_king1 }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Integrate Economies
+	focus = {
+		id = PHU_integrateeconomies
+		icon = GFX_goal_unknown
+		x = 6
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = PHU_powerunion }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Integrate Militaries
+	focus = {
+		id = PHU_integratemilitaries
+		icon = GFX_goal_unknown
+		x = 8
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = PHU_powerunion }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Globalise Economy
+	focus = {
+		id = PHU_globaliseeconomy
+		icon = GFX_goal_unknown
+		x = 6
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = PHU_integrateeconomies }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Organize The New Divisions
+	focus = {
+		id = PHU_organizethenewdivisions
+		icon = GFX_goal_unknown
+		x = 8
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = PHU_integratemilitaries }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Prepare A Westward Attack
+	focus = {
+		id = PHU_prepareawestwardattack
+		icon = GFX_goal_unknown
+		x = 7
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = PHU_organizethenewdivisions }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Prepare Eastward Attack
+	focus = {
+		id = PHU_prepareeastwardattack
+		icon = GFX_goal_unknown
+		x = 9
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = PHU_organizethenewdivisions }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Attack Germany
+	focus = {
+		id = PHU_attackgermany
+		icon = GFX_goal_unknown
+		x = 7
+		y = 7
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = PHU_prepareawestwardattack }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Attack Russia
+	focus = {
+		id = PHU_attackrussia
+		icon = GFX_goal_unknown
+		x = 9
+		y = 7
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = PHU_prepareeastwardattack }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Prepare Massive Industrialization
+	focus = {
+		id = PHU_preparemassiveindustrialization
+		icon = GFX_goal_unknown
+		x = 5
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = PHU_globaliseeconomy }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Democratic Monarchy
+	focus = {
+		id = PHU_democraticmonarchy
+		icon = GFX_goal_unknown
+		x = 11
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = PHU_king2 }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Alliance Of Nations
+	focus = {
+		id = PHU_allianceofnations
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 10
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = PHU_democraticmonarchy }
+		mutually_exclusive = { focus = PHU_manipulateeurope }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Invite European Nations
+	focus = {
+		id = PHU_inviteeuropeannations
+		icon = GFX_goal_unknown
+		x = 10
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = PHU_allianceofnations }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Manipulate Europe
+	focus = {
+		id = PHU_manipulateeurope
+		icon = GFX_goal_unknown
+		x = 12
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = PHU_democraticmonarchy }
+		mutually_exclusive = { focus = PHU_allianceofnations }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+#End of focuses 
+ }

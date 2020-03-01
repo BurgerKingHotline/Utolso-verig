@@ -1,0 +1,81 @@
+add_namespace = mod
+
+##Event: Poland Negotiates Military Access
+country_event = {
+	id = mod.1
+	title = mod.1.title
+	desc = mod.1.desc
+	picture = GFX_report_event_lithuania_army
+	is_triggered_only = yes
+	fire_only_once = yes
+	mean_time_to_happen = {
+		days = 1
+	}
+	option = {
+		name = mod.1.a
+		ai_chance = { factor = 80}
+		HUN = { give_military_access= POL }
+POL = { give_military_access= HUN }
+POL = { country_event = { days = 1 id = mod.3 } }
+	}
+	option = {
+		name = mod.1.b
+		ai_chance = { factor = 1}
+		POL = { country_event= {
+days = 1 
+id = mod.1 
+} }
+	}
+}
+##Event: Hungary denies military access
+country_event = {
+	id = mod.2
+	title = mod.2.title
+	desc = mod.2.desc
+	picture = GFX_report_event_molotov_ribbentrop_stalin_pact
+	is_triggered_only = yes
+	fire_only_once = yes
+	mean_time_to_happen = {
+		days = 1
+	}
+	option = {
+		name = mod.2.a
+		ai_chance = { factor = 1}
+	}
+}
+##Event: Hungary accepts military access
+country_event = {
+	id = mod.3
+	title = mod.3.title
+	desc = mod.3.desc
+	picture = GFX_report_event_por_salazar_military
+	is_triggered_only = yes
+	fire_only_once = yes
+	mean_time_to_happen = {
+		days = 1
+	}
+	option = {
+		name = mod.3.a
+		ai_chance = { factor = 1}
+	}
+}
+##Event: Poland proposes unification
+country_event = {
+	id = mod.4
+	title = mod.4.title
+	desc = mod.4.desc
+	picture = GFX_report_event_second_vienna_award_pact
+	is_triggered_only = yes
+	fire_only_once = yes
+	mean_time_to_happen = {
+		days = 1
+	}
+	option = {
+		name = mod.4.a
+		ai_chance = { factor = 1}
+	}
+	option = {
+		name = mod.4.b
+		ai_chance = { factor = 1}
+	}
+}

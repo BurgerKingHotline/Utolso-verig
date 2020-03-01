@@ -1,0 +1,306 @@
+focus_tree = {
+	id = Hungary
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = HUN
+		}
+	}
+	#Focus for Our King!
+	focus = {
+		id = HUN_ourking
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 9
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL } 
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Salvation Of Europe
+	focus = {
+		id = HUN_salvationofeurope
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 7
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = HUN_ourking }
+		mutually_exclusive = { focus = HUN_stabilizethenation }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Stabilize The Nation
+	focus = {
+		id = HUN_stabilizethenation
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 11
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = HUN_ourking }
+		mutually_exclusive = { focus = HUN_salvationofeurope }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Allow Foreign Immigration
+	focus = {
+		id = HUN_allowforeignimmigration
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 7
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = HUN_salvationofeurope }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Industrialize Rural Areas
+	focus = {
+		id = HUN_industrializeruralareas
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 10
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = HUN_stabilizethenation }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Heavy Urbanisation
+	focus = {
+		id = HUN_heavyurbanisation
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 12
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = HUN_stabilizethenation }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Fortify Danube
+	focus = {
+		id = HUN_fortifydanube
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 11
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = HUN_heavyurbanisation }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Fortify Polish Border
+	focus = {
+		id = HUN_fortifypolishborder
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 13
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = HUN_heavyurbanisation }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Prepare Romanian Flank
+	focus = {
+		id = HUN_prepareromanianflank
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 10
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = HUN_fortifydanube 
+		}
+		prerequisite = { 
+			focus = HUN_industrializeruralareas 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Constitutional Monarchy
+	focus = {
+		id = HUN_constitutionalmonarchy
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 6
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = HUN_allowforeignimmigration }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for A Lone Nation
+	focus = {
+		id = HUN_alonenation
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 13
+		y = 8
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = HUN_deathtothepolish }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Polish - Hungarian Unity
+	focus = {
+		id = HUN_polishhungarianunity
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 7
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = HUN_amoredemocraticnation 
+			focus = HUN_constitutionalmonarchy 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Death To The Polish
+	focus = {
+		id = HUN_deathtothepolish
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 13
+		y = 7
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = HUN_preparepolishinvasion }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Prepare Polish Invasion
+	focus = {
+		id = HUN_preparepolishinvasion
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 13
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = HUN_endtothepolishbond }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for End To The Polish Bond
+	focus = {
+		id = HUN_endtothepolishbond
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 14
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = HUN_fortifypolishborder }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Anti Romanian Propaganda
+	focus = {
+		id = HUN_antiromanianpropaganda
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 9
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = HUN_prepareromanianflank }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Claim Romanian Territory
+	focus = {
+		id = HUN_claimromanianterritory
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 11
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = HUN_prepareromanianflank }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Topple Romania
+	focus = {
+		id = HUN_toppleromania
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 10
+		y = 7
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = HUN_antiromanianpropaganda 
+		}
+		prerequisite = { 
+			focus = HUN_claimromanianterritory 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Put Down Anti Monarch Revolts
+	focus = {
+		id = HUN_putdownantimonarchrevolts
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 12
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = HUN_fortifypolishborder }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for A More Democratic Nation
+	focus = {
+		id = HUN_amoredemocraticnation
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 8
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = HUN_allowforeignimmigration }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+#End of focuses 
+ }
